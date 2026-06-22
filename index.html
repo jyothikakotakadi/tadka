@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Tadka Express</title>
+</head>
+<body>
+    <h1>Tadka Express</h1>
+    <h2 id="offer">Loading Offer...</h2>
+
+    <script>
+        fetch("offers.json")
+        .then(response => response.json())
+        .then(data => {
+            document.getElementById("offer").innerHTML =
+                data.headline + " - Code: " + data.code;
+        });
+    </script>
+</body>
+</html>
